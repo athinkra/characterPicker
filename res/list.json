@@ -14,21 +14,6 @@
         "start": 2208,
         "title": "Arabic Extended-A"
     },
-    "Arabic Mathematical Alphabetic Symbols": {
-        "filename": "0x1ee00-arabic_mathematical_alphabetic_symbols.json",
-        "start": 126464,
-        "title": "Arabic Mathematical Alphabetic Symbols"
-    },
-    "Arabic Presentation Forms-A": {
-        "filename": "0xfb50-arabic_presentation_forms-a.json",
-        "start": 64336,
-        "title": "Arabic Presentation Forms-A"
-    },
-    "Arabic Presentation Forms-B": {
-        "filename": "0xfe70-arabic_presentation_forms-b.json",
-        "start": 65136,
-        "title": "Arabic Presentation Forms-B"
-    },
     "Arabic Supplement": {
         "filename": "0x750-arabic_supplement.json",
         "start": 1872,
