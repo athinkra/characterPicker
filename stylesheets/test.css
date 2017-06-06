@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "Kikakui Sans";
+    src: url("../fonts/KikakuiSans.ot.ttf");
+  }
+  @font-face {
+      font-family: "Kikakui Sans Pro";
+      src: url("../fonts/KikakuiSansPro.ot.ttf");
+    }
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: grey;
+    margin: 0;
+    padding: 0;
+}
+
+#fonttest {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    /* padding: 5px; */
+}
+
+h1, h2 {
+    text-align : center;
+}
+.kikakui, .sample, .note {
+    font-family: 'Kikakui Sans';
+}
+
+.kikakui, .sample {
+    font-size: 2.5em;
+}
+
+.sample {
+    letter-spacing: 0.5em;
+    background-color: silver;
+
+}
+
+/* U+1E800 - ki; U+1E801 - ka; U+1E802 - ku  */
+.ss01 {
+    font-feature-settings: "ss01" 1;
+}

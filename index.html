@@ -1,47 +1,138 @@
-<!doctype html>
-<html manifest="manifest.appcache">
-	<head>
-		<title>Character Picker</title>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="stylesheet.css" />
-		<script src="characterPicker.js" type="text/javascript"></script>
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-	</head>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Athinkra character picker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/picker.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/mende-kikakui.css" media="screen">
+    <script type="text/javascript" src="js/domready.js"></script>
+    <script src="characterPicker.js" type="text/javascript"></script>
+  </head>
+  <!--<body onload="start();">-->
+  <body id="body" onload="start();">
+    <section class="page-header">
+      <h1 class="project-name">Athinkra character picker</h1>
+      <!--<h2 class="project-tagline">Unicode input</h2>-->
+    </section>
 
-	<body id="body" onload="start();">
-		<h1>Unicode characters picker</h1>
-		<p>For quick start, you may want to experiment with some <a onclick="loadCharactersFile('0x1f600-emoticons.json')" href="#?load=0x1f600-emoticons.json">Emoji glyps</a> or some <a onclick="loadCharactersFile('0x1f300-miscellaneous_symbols_and_pictographs.json')" href="#?load=0x1f300-miscellaneous_symbols_and_pictographs.json">Pictographs</a>.</p>
-		<div id="panel">
-		<textarea id="input" dir="auto" autofocus onkeyup="updateInputLength()" placeholder="Type your message here…"></textarea>
-		<fieldset>
-			<button id="clear">Clear</button>
-	<button id="tweet" onclick="document.location = 'https://twitter.com/?status='+ encodeURI(document.getElementById('input').value);">Tweet</button>
-		</fieldset>
-		<fieldset>
-        <legend>Active keymap</legend>
-        <select id="blockSelection" onchange="loadSelectedBlock(document.getElementById('blockSelection'));">
-            <option value=""></option>
-        </select>
-		</fieldset>
-		<fieldset>
-			<legend>Show as </legend>
+    <section class="main-content">
 
-			<input type="radio" name="style" value="table" checked="checked" onclick="changeListStyle('table')" id="label-table" />
-			<label for="label-table">Table</label>
 
-	    <input type="radio" name="style" value="list" onclick="changeListStyle('list')" id="label-list"/>
-	    <label for="label-list">List</label>
-		</fieldset>
-		<fieldset>
-			<legend>Input length</legend>
-	<span id="length"></span> <span id="value"></span>
-		</fieldset>
-	</div>
-	
-	<div id="buttons">
-               <div class="big">Please select keymap above to start</div>
-	</div>
-	<p>CC-BY-SA <a href="http://tomercohen.com">Tomer Cohen</a>. Source code available on <a href="https://github.com/tomer/characterPicker">github</a>, fell free to fork and PR new features!</p>
-	<p>Symbola font borrowed from <a href="http://users.teilar.gr/~g1951d">http://users.teilar.gr/~g1951d</a>, and EmojiOne font from <a href="https://github.com/eosrei/emojione-color-font">eosrei@github</a>.
-	</body>
+
+
+
+
+
+
+
+
+
+
+
+        <!--<h1>Athinkra character picker</h1>-->
+        <div id="panel">
+
+            <fieldset style="display:none;">
+                <button id="clear">Clear</button>
+                <!--<button id="tweet" onclick="document.location = 'https://twitter.com/?status='+ encodeURI(document.getElementById('input').value);">Tweet</button>-->
+            </fieldset>
+            <div id="inputControls">
+                <textarea lang="men-Mend" id="input" dir="auto" autofocus onkeyup="updateInputLength()" placeholder="Type your message here…"></textarea>
+
+                <fieldset>
+                <legend>Active keymap</legend>
+                <select id="blockSelection" onchange="loadSelectedBlock(document.getElementById('blockSelection'));">
+                    <option value=""></option>
+                </select>
+                </fieldset>
+
+                <fieldset style="display:none;">
+                    <legend>Show as </legend>
+                    <input type="radio" name="style" value="table" checked="checked" onclick="changeListStyle('table')" id="label-table" />
+                    <label for="label-table">Table</label>
+                <input type="radio" name="style" value="list" onclick="changeListStyle('list')" id="label-list"/>
+                <label for="label-list">List</label>
+                </fieldset>
+
+                <fieldset style="display:none;">
+                    <legend>Input length</legend>
+                    <span id="length"></span> <span id="value"></span>
+                </fieldset>
+
+            </div>
+
+        </div>
+
+        <div id="buttons" dir="rtl">
+               <!-- <div class="big">Please select keymap above to start</div> -->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/athinkra/bamum">Bassa Vah</a> is maintained by <a href="https://github.com/athinkra">athinkra</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        <span class="site-footer-credits">The character picker was developed by, and forked from <a href=""></a>.</span>
+      </footer>
+
+    </section>
+
+    <script>
+
+      domReady(function() {
+
+        /*
+         *  TODO
+         *     - remove meet for length updates
+         *     - if singleInput not defeined ... set to NULL
+         *     - remove need for input sleector
+         *     - choose input based on language code
+         *     - programativally control table vs list
+         *     - investigate best way of adding space characters
+         *     - how to handle delete or backspace?
+         *
+         */
+
+
+
+        //singleInput = "0x1e800-mende_kikakui.json";
+        start();
+
+
+        function listType(ltype) {
+            changeListStyle(ltype);
+            if (ltype == 'table' && document.getElementById('label-table') !== null) {
+                document.getElementById("label-table").checked=true;
+            } else if (ltype == 'list' && document.getElementById('label-list') !== null) {
+                document.getElementById("label-list").checked=true;
+            }
+
+        }
+        listType('table');
+
+        /*
+         * loadSelectedBlock('0xa6a0-bamum.json');
+         * changeListStyle('table');
+         *
+         */
+
+
+      });
+
+    </script>
+  </body>
 </html>
